@@ -1,0 +1,6 @@
+dips_billing_service/__pycache__/
+billing_service/__pycache__/
+billing_service/migrations/__pycache__/
+billing_service/tests/__pycache__/
+htmlcov/
+.coverage
