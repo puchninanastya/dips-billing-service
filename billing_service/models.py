@@ -6,11 +6,11 @@ class Payment(models.Model):
         blank=False,
         null=False,
         verbose_name="For order")
-    payment_date = models.DateField(
+    payment_date = models.DateTimeField(
         blank=True,
         null=False,
         default=now,
-        verbose_name="Payment date")
+        verbose_name="Payment datetime")
     amount_paid = models.PositiveIntegerField(
         verbose_name="Amount paid")
     payment_method = models.CharField(
