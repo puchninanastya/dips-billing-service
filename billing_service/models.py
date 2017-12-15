@@ -2,10 +2,6 @@ from django.db import models
 from django.utils.timezone import now
 
 class Payment(models.Model):
-    user_id = models.IntegerField(
-        blank=False,
-        null=False,
-        verbose_name="By user")
     order_id = models.IntegerField(
         blank=False,
         null=False,
