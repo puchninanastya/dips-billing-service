@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import RegexValidator
 from django.utils.timezone import now
 
 class Payment(models.Model):
@@ -22,7 +23,12 @@ class Payment(models.Model):
             ('CH', 'Cash payment'),
             ('CD', 'Payment by card')),
         verbose_name="Payment method")
+    account_number_regex = RegexValidator(
+        regex=r'^\d{,20}$',
+        message="This field should contain only digits."
+    )
     account_number = models.CharField(
+        validators=[account_number_regex],
         max_length=20,
         blank=True,
         null=True,
