@@ -20,7 +20,7 @@ class Payment(models.Model):
         null=False,
         default='CH',
         choices=(
-            ('CH', 'Cash payment'),
+            ('CH', 'Payment by cash'),
             ('CD', 'Payment by card')),
         verbose_name="Payment method")
     account_number_regex = RegexValidator(
