@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import RegexValidator
-from django.utils.timezone import now
+from django.utils import timezone
 
 class Payment(models.Model):
     order_id = models.IntegerField(
@@ -10,7 +10,7 @@ class Payment(models.Model):
     payment_date = models.DateTimeField(
         blank=True,
         null=False,
-        default=now,
+        default=timezone.localtime(timezone.now()),
         verbose_name="Payment datetime")
     amount_paid = models.PositiveIntegerField(
         verbose_name="Amount paid")
